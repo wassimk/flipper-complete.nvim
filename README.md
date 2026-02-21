@@ -4,12 +4,12 @@ Autocomplete [Flipper](https://github.com/jnunemaker/flipper) feature flag
 names in Neovim. Reads feature names and descriptions from a YAML config file
 and suggests them when typing flipper method calls.
 
-## Requirements
+## 📋 Requirements
 
 - **Neovim 0.10+**
 - [blink.cmp](https://github.com/Saghen/blink.cmp) or [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
-## Installation
+## 🛠️ Installation
 
 ### blink.cmp
 
@@ -48,7 +48,7 @@ The source auto-registers when nvim-cmp is detected:
 
 Add `flipper_complete` to your nvim-cmp sources for the ruby filetype.
 
-## Usage
+## 💻 Usage
 
 The plugin reads feature names from `./config/feature-descriptions.yml` (relative
 to your project root). This file should contain lines in the format:
@@ -73,7 +73,7 @@ When using the `featureEnabled` JavaScript prefix, feature names are
 automatically transformed to camelCase format (stripping the `ROLLOUT_` prefix
 and `enable_`/`disable_` prefixes).
 
-## Configuration
+## 🔧 Configuration
 
 Pass options via blink.cmp's provider `opts` or `require('flipper-complete').setup()`:
 
@@ -106,7 +106,7 @@ require('flipper-complete').setup({
 | `features_path` | `./config/feature-descriptions.yml` | Path to the YAML features file |
 | `prefixes` | See above | List of method prefixes that trigger completion |
 
-## Development
+## 🔨 Development
 
 Run tests and lint:
 
@@ -114,3 +114,11 @@ Run tests and lint:
 make test
 make lint
 ```
+
+Enable the local git hooks (one-time setup):
+
+```shell
+git config core.hooksPath .githooks
+```
+
+This activates a pre-commit hook that auto-generates `doc/flipper-complete.nvim.txt` from `README.md` whenever the README is staged. Requires [pandoc](https://pandoc.org/installing.html).
