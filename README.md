@@ -4,6 +4,8 @@ Autocomplete [Flipper](https://github.com/jnunemaker/flipper) feature flag
 names in Neovim. Reads feature names and descriptions from a YAML config file
 and suggests them when typing flipper method calls.
 
+![Demo](docs/demo.gif)
+
 ## 📋 Requirements
 
 - **Neovim 0.10+**
