@@ -154,6 +154,23 @@ describe('items', function()
     assert.is_nil(result)
   end)
 
+  it('works with featureEnabled inside JS if-condition parentheses', function()
+    local result = items.build_items({
+      line_text = 'if (featureEnabled("',
+      line_number = 0,
+      cursor_col = 20,
+    })
+
+    assert.is_not_nil(result)
+    local filter_texts = {}
+    for _, item in ipairs(result) do
+      filter_texts[item.filterText] = true
+    end
+    assert.is_true(filter_texts['"dark_mode'])
+    assert.is_true(filter_texts['"legacy_ui'])
+    assert.is_true(filter_texts['"notifications'])
+  end)
+
   it('works with indented lines', function()
     local result = items.build_items({
       line_text = '    if Features.enabled?("',
