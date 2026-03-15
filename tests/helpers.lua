@@ -14,7 +14,7 @@ M.test_yaml_lines = {
   'ROLLOUT_disable_legacy_ui: Phase out old interface',
   'ROLLOUT_test_feature_with_description: This should be excluded',
   'ROLLOUT_enable_notifications: Push notification support',
-  "ROLLOUT_enable_search: \"Enables the new search feature\"",
+  'ROLLOUT_enable_search: "Enables the new search feature"',
 }
 
 function M.setup_mocks()
