@@ -25,6 +25,10 @@ and suggests them when typing flipper method calls.
     sources = {
       per_filetype = {
         ruby = { inherit_defaults = true, 'flipper_complete' },
+        javascript = { inherit_defaults = true, 'flipper_complete' },
+        javascriptreact = { inherit_defaults = true, 'flipper_complete' },
+        typescript = { inherit_defaults = true, 'flipper_complete' },
+        typescriptreact = { inherit_defaults = true, 'flipper_complete' },
       },
       providers = {
         flipper_complete = {
@@ -48,7 +52,7 @@ The source auto-registers when nvim-cmp is detected:
 { 'wassimk/flipper-complete.nvim' }
 ```
 
-Add `flipper_complete` to your nvim-cmp sources for the ruby filetype.
+Add `flipper_complete` to your nvim-cmp sources for the appropriate filetypes (ruby, javascript, javascriptreact, typescript, typescriptreact).
 
 ## 💻 Usage
 
@@ -71,9 +75,10 @@ Completions trigger when typing flipper method calls such as:
 
 The trigger characters are `"`, `'`, and `:` (for Ruby symbols).
 
-When using the `featureEnabled` JavaScript prefix, feature names are
-automatically transformed to camelCase format (stripping the `ROLLOUT_` prefix
-and `enable_`/`disable_` prefixes).
+When using the `featureEnabled` JavaScript/TypeScript prefix, feature names are
+automatically transformed by stripping the `ROLLOUT_` prefix and
+`enable_`/`disable_` prefixes. For example, `ROLLOUT_enable_dark_mode` becomes
+`dark_mode`.
 
 ## 🔧 Configuration
 

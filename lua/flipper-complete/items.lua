@@ -12,7 +12,7 @@ function M.build_items(cursor_info)
 
   local before_cursor = line:sub(1, col)
 
-  local method_prefix = before_cursor:match('(%g+)%(["\':]$')
+  local method_prefix = before_cursor:match('([%w_.?]+)%(["\':]$')
   if not method_prefix then
     return nil
   end
