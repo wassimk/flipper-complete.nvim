@@ -1,3 +1,6 @@
+> [!CAUTION]
+> This plugin is no longer maintained. Use [flipper-ls.nvim](https://github.com/wassimk/flipper-ls.nvim) instead, which is an in-process LSP server providing completion, hover, and go-to-definition for Flipper feature flags.
+
 # flipper-complete.nvim
 
 Autocomplete [Flipper](https://github.com/jnunemaker/flipper) feature flag
